@@ -165,6 +165,12 @@ public class AceGWTDemo implements EntryPoint {
 		editor2.startEditor();
 		editor2.setTheme(AceEditorTheme.TWILIGHT);
 		editor2.setMode(AceEditorMode.PERL);
+		//editor2.setMode(new SqlMode());
+		//String sqlText = "" +
+		//		"SELECT *,5,'temp',7 <= 8, count(*), (\n" +
+		//		"    case when /* just in case */ true then 5 else 6 end\n" + 
+		//		") when FROM (data); -- my first query\n";
+		//editor2.setText(sqlText);
 	}
 
 	/**
