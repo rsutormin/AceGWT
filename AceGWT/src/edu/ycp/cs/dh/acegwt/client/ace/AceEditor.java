@@ -164,6 +164,11 @@ public class AceEditor extends Composite implements RequiresResize, HasText, Tak
 		editor.getSession().setMode(new TheMode());
 	}-*/;
 
+	/**
+	 * Set custom mode described in java code.
+	 * 
+	 * @param mode custom mode
+	 */
 	public native void setMode(AceEditorModeCustom mode) /*-{
 		var editor = this.@edu.ycp.cs.dh.acegwt.client.ace.AceEditor::editor;
 		var TheMode = mode.@edu.ycp.cs.dh.acegwt.client.ace.AceEditorModeCustom::toJavaScript()();

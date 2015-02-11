@@ -2,9 +2,16 @@ package edu.ycp.cs.dh.acegwt.client.ace;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
+/**
+ * Ace editor mode implemented in java. It's experimental feature 
+ * yet and it covers only token highlighting.
+ */
 public class AceEditorModeCustom {
 	protected JavaScriptObject ancestor;
 	
+	/**
+	 * Create default text editor mode (no highlighting).
+	 */
 	public AceEditorModeCustom() {
 		this.ancestor = getJavaScriptAncestor();
 	}
@@ -15,18 +22,35 @@ public class AceEditorModeCustom {
 		return textMode;
 	}-*/;
 
+	/**
+	 * Give highlight rules. Inheriting class can override this 
+	 * method if necessary.
+	 * @return object with highlighting rules
+	 */
 	public AceHighlightRules getHighlightRules() {
 		return null;
 	}
 	
+	/**
+	 * Give short mode ID (which will be suffix of "ace/mode/...").
+	 * @return short mode ID
+	 */
 	public String getShortModeId() {
 		return null;
 	}
 
+	/**
+	 * Give starting prefix of one line comment.
+	 * @return starting prefix of one line comment
+	 */
 	public String getLineCommentStart() {
 		return null;
 	}
 	
+	/**
+	 * Create JavaScript object representing editor mode.
+	 * @return JavaScript object representing editor mode
+	 */
 	public native JavaScriptObject toJavaScript() /*-{
 		var javaRules = this.@edu.ycp.cs.dh.acegwt.client.ace.AceEditorModeCustom::getHighlightRules()();
 		var jsRules = javaRules.@edu.ycp.cs.dh.acegwt.client.ace.AceHighlightRules::toJavaScript()();
